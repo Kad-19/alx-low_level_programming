@@ -1,10 +1,19 @@
 #include <stdio.h>
 
-int main(void) 
+/**
+ * main - prints a message
+ *
+ * Return: 1
+ */
+int main(void)
 {
-    char message[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-    for(int i=0; message[i]!='\0'; i++){
-        putchar(message[i]);
-    }
-    return (1);
+	char mes[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int i = 0;
+
+	while (mes[i] != '\0')
+	{
+		putchar(mes[i]);
+		i++;
+	}
+	return (1);
 }
