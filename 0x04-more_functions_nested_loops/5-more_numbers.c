@@ -13,10 +13,25 @@ void more_numbers(void)
 	{
 		int i = 48;
 
+		int k = 0;
+
 		while (i < 58)
 		{
+			if (k == 1 && i == 53)
+			{
+				break;
+			}
+			if (k == 1)
+			{
+				_putchar('1');
+			}
 			_putchar(i);
 			i++;
+			if (i == 58 && k == 0)
+			{
+				k = 1;
+				i = 48;
+			}
 		}
 		_putchar('\n');
 		j++;
