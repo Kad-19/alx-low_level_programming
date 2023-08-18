@@ -7,11 +7,11 @@
  */
 void print_most_numbers(void)
 {
-	int i = 0;
+	int i = 48;
 
-	while (i < 10)
+	while (i < 58)
 	{
-		if (i == 2 && i == 4)
+		if (i == 60 && i == 62)
 		{
 			i++;
 			continue;
