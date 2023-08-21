@@ -14,6 +14,7 @@ int _strlen(char *s)
 	{
 		i++;
 		if (s[i] == '\0')
-			return (i);
+			break;
 	}
+	return (i);
 }
