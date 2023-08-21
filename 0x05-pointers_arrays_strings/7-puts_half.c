@@ -14,6 +14,7 @@ void puts_half(char *str)
 			break;
 		i++;
 	}
+
 	int half = i / 2;
 
 	i = i - half;

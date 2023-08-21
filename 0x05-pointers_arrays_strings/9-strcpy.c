@@ -16,6 +16,7 @@ char *_strcpy(char *dest, char *src)
 			break;
 		i++;
 	}
+
 	int j = 0;
 
 	while (j <= i)
