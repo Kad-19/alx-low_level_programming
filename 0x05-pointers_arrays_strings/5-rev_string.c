@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "main.h"
 /**
- *print_rev - prints a string in reverse order
+ *rev_string - reverses a string
  *@s: array of characters
  */
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	int i = 0;
 
@@ -15,10 +15,19 @@ void print_rev(char *s)
 		i++;
 	}
 	i--;
+	int j = 0;
+
+	char *temp;
+
 	while (i >= 0)
 	{
-		_putchar(s[i]);
+		temp[j] = s[i];
 		i--;
+		j++;
 	}
-	_putchar('\n');
+	j--;
+	while (j >= 0)
+	{
+		s[j] = temp[j];
+	}
 }
