@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- *_memset - fills memory with a constant byte
- *@s: a pointer
- *@b: a constant byte
+ *_memcpy - copies memory area
+ *@dest: a pointer
+ *@src: a pointer
  *@n: an integer
- *Return: s
+ *Return: dest
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
@@ -13,8 +13,8 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 
 	while (i < n)
 	{
-		s[i] = b;
+		dest[i] = src[i];
 		i++;
 	}
-	return (*s);
+	return (dest);
 }
