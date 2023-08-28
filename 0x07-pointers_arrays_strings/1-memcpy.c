@@ -7,7 +7,7 @@
  *@n: an integer
  *Return: s
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i = 0;
 
@@ -16,5 +16,5 @@ char *_memset(char *s, char b, unsigned int n)
 		s[i] = b;
 		i++;
 	}
-	return (s);
+	return (*s);
 }
