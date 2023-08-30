@@ -19,6 +19,6 @@ int wildcmp(char *s1, char *s2)
 	}
 	else
 	{
-		return (wildcmp(s + 1, s + 1));
+		return (wildcmp(s1 + 1, s2 + 1));
 	}
 }
