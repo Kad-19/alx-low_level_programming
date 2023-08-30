@@ -29,7 +29,7 @@ int wildcmp(char *s1, char *s2)
  * @i: an integer
  * Return: void
  */
-void *_rev_recursion(char *s, char *r, int i)
+void _rev_recursion(char *s, char *r, int i)
 {
 	if (*s != '\0')
 	{
@@ -59,7 +59,7 @@ int is_palindrome(char *s)
 {
 	int i;
 
-	char *rev;
+	char rev[200];
 
 	i = _strlen_recursion(s);
 	_rev_recursion(s, rev + i, 0);
