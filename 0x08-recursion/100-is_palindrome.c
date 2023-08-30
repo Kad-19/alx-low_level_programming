@@ -27,16 +27,15 @@ int wildcmp(char *s1, char *s2)
  * @s: a string
  * @r: a string
  * @i: an integer
- * Return: a pointer
+ * Return: void
  */
-char *_rev_recursion(char *s, char *r, int i)
+void *_rev_recursion(char *s, char *r, int i)
 {
 	if (*s != '\0')
 	{
 		_rev_recursion(s + 1, r, i + 1);
 		*(r - i) = *s;
 	}
-	return (r);
 }
 /**
  * _strlen_recursion - length of a string
@@ -60,9 +59,9 @@ int is_palindrome(char *s)
 {
 	int i;
 
-	char rev[100];
+	char *rev;
 
-	i = _strlen_ recursion(s);
-	rev = _rev_recursion(s, rev + i, 0);
-	return (wildcamp(s, rev));
+	i = _strlen_recursion(s);
+	_rev_recursion(s, rev + i, 0);
+	return (wildcmp(s, rev));
 }
