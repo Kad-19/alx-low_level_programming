@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lists.h"
 /**
- * add_nodeint - deletes the first node
+ * pop_listint - deletes the first node
  * @head: a pointer that points to a pointer that points to the first node
  * Return: an integer of the head node, 0 if the list is empty
  */
