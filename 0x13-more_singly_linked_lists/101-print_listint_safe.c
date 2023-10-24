@@ -8,11 +8,20 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	listint_t *curr = (listint_t *)head;
+	listint_t *node;
 	size_t len = 0;
 
-	if (curr == NULL)
-		return (0);
-	len = 1 + print_listint_safe(curr->next);
-	printf("[%p] %d\n", (void *)curr, curr->n);
+	while (curr != NULL)
+	{
+		printf("[%p] %d\n", (void *) curr, curr->n);
+		len++;
+		node = curr->next;
+		if (node >= curr)
+		{
+			printf("-> [%p] %d\n", (void *) node, node->n);
+			exit(98);
+		}
+		curr = node;
+	}
 	return (len);
 }
