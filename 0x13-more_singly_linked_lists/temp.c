@@ -19,8 +19,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (node >= curr)
 		{
 			printf("-> [%p] %d\n", (void *) node, node->n);
-			curr->next = NULL;
-			return (len);
+			exit(98);
 		}
 		curr = node;
 	}
