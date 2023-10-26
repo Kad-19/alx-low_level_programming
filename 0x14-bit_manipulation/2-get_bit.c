@@ -14,8 +14,8 @@ int last_bit(unsigned long int n)
 	while (bin > 0)
 	{
 		if (bin & n)
-			lz = 0;
-		if (lz == 0)
+			lz = 1;
+		if (lz == 1)
 		{
 			if (bin & n)
 				bit = 1;

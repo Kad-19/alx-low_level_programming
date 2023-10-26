@@ -6,15 +6,13 @@
  */
 int last_bit(unsigned long int n)
 {
-	int lz = 1;
+	int lz = 0;
 	unsigned long int bin = 1;
 	int bit;
 
 	bin = bin << (sizeof(unsigned long int) * 8 - 1);
 	while (bin > 0)
 	{
-		if (bin & n)
-			lz = 0;
 		if (lz == 0)
 		{
 			if (bin & n)
