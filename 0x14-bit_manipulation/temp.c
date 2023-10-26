@@ -35,12 +35,18 @@ int last_bit(unsigned long int n)
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int temp = n;
+	unsigned int i = 0;
 	unsigned int j = 0;
 
-	if (index > sizeof(unsigned long int) * 8)
+/*	if (index > sizeof(unsigned long int) * 8)
 		return (-1);
+	while (temp > 0)
+	{
+		temp >>= 1;
+		i++;
+	}*/
 	temp = n;
-	while (j < sizeof(unsigned long int) * 8)
+	while (j >= 0)
 	{
 		if (j == index)
 			return (last_bit(temp));
