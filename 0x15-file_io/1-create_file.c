@@ -1,45 +1,51 @@
 #include "main.h"
 
-#define BUFFER_SIZE 1024
 /**
- * read_textfile - reads text from a file and prints it to the stdout
+ * create_file - creates a file and writes a text in it
  * @filename: the name of the file
- * @letters: number of chars to be printed
- * Return: 0 or the actual numbers of chars it could print
+ * @text_content: the text to be written to the file
+ * Return: 1 if succefful, -1 if failed
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	char buffer[BUFFER_SIZE];
-	ssize_t bytesr = 1;
 	ssize_t bytesw;
-	ssize_t total_byte = 0;
+	ssize_t len;
 
 	if (filename == NULL)
-		return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (0);
-	while (bytesr > 0)
+		return (-1);
+	if (access(filename, F_OK) == 0)
 	{
-		bytesr = read(fd, buffer, sizeof(buffer) - 1);
-		if (bytesr == -1)
+		fd = open(filename, O_WRONLY | O_TRUNC);
+		if (fd == -1)
+			return (-1);
+		if (text_content != NULL)
 		{
-			close(fd);
-			return (0);
-		}
-		buffer[bytesr] = '\0';
-		total_byte += bytesr;
-		if (total_byte <= (ssize_t)letters)
-		{
-			bytesw = write(STDOUT_FILENO, buffer, bytesr);
-			if (bytesw == -1 || bytesw != bytesr)
+			len = strlen(text_content);
+			bytesw = write(fd, text_content, len);
+			if (bytesw == -1 || bytesw != len)
 			{
 				close(fd);
-				return (0);
+				return (-1);
+			}
+		}
+	}
+	else
+	{
+		fd = open(filename, O_CREAT | O_RDWR | S_IRUSR | S_IWUSR);
+		if (fd == -1)
+			return (-1);
+		if (text_content != NULL)
+		{
+			len = strlen(text_content);
+			bytesw = write(fd, text_content, len);
+			if (bytesw == -1 || bytesw != len)
+			{
+				close(fd);
+				return (-1);
 			}
 		}
 	}
 	close(fd);
-	return (total_byte);
+	return (1);
 }
