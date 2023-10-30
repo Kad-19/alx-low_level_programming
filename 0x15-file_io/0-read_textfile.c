@@ -28,6 +28,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			close(fd);
 			return (0);
 		}
+		buffer[bytesr] = '\0';
 		total_byte += bytesr;
 		if (total_byte <= (ssize_t)letters)
 		{
