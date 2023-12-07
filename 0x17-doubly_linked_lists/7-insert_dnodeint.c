@@ -29,14 +29,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		*h = new;
 		return (new);
 	}
-	while (curr != NULL)
+	while (curr->next != NULL)
 	{
 		if (idx == nodenum + 1)
 			break;
 		curr = curr->next;
 		nodenum++;
 	}
-	if (curr == NULL)
+	if (curr->next == NULL)
 	{
 		free(new);
 		return (NULL);
